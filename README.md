@@ -2,11 +2,11 @@
 <p align="center">A minimalist "retro/hacker" bspwm desktop environment for daily use on archlinux</p>
 
 
-After configuring a desktop environment with Hyprland on Wayland, I was left wanting to explore something new and different, this time based on Xorg (X11). My goal was to find a minimalist and simple setup that would optimize resources to the maximum without losing that distinct retro-functional and clean aesthetic, I opted for  bspwm.
+After configuring a desktop environment with Hyprland on Wayland, I was left wanting to explore something new and different, this time based on Xorg (X11). My goal was to find a minimalist and simple setup that would optimize resources to the maximum without losing that distinct retro-functional and clean aesthetic, I opted for bspwm.
 
 My configuration aims to be both functional and simple, tailored specifically for my workflow as a Telematics Engineering student and my daily needs.
 
-I hope this repository serve as a guide and inspiration for your 'rice'. If you have any questions or suggestions, I would greatly appreciate you sharing them, either by opening an issue here or contacting me through the methods listed on my GitHub profile.
+I hope this repository serves as a guide and inspiration for your 'rice'. If you have any questions or suggestions, I would greatly appreciate you sharing them, either by opening an issue here or contacting me through the methods listed on my GitHub profile.
 
 #
 > [!WARNING]
@@ -29,13 +29,13 @@ I hope this repository serve as a guide and inspiration for your 'rice'. If you 
 ├── .config/             # Contains all the main configuration files for various programs and tools        
 │   └── ...                   
 ├── assets/              # Screenshots, wallpapers, and other media files
-├── .xinitrc             # X server startup script
+├── .xinitrc             # X session startup script
 ├── .zshrc               # Zsh shell configuration
 └── README.md            # You are here!
 ```
 
 ## Installation
-It is assumed that the user has a clean Arch Linux installation. Make sure you have git installed.
+This guide assumes a clean Arch Linux installation with git already present. Familiarity with basic terminal commands is also recommended.
 
 1.  **Install an AUR Helper (I use paru)** \
     Some dependencies might be in the Arch User Repository (AUR). You can install [paru](https://github.com/Morganamilo/paru?tab=readme-ov-file#installation) or [yay](https://github.com/Jguer/yay#installation), which are among the most popular.
@@ -57,26 +57,33 @@ It is assumed that the user has a clean Arch Linux installation. Make sure you h
 
 4.  **Backup Existing Dotfiles (Highly Recommended!)** \
      Before stowing, make a backup of any existing dotfiles to prevent data loss.
-
+    
 5.  **Incorporate dotfiles** \
-      To apply the configuration files you have two options:
+    To apply the configuration files you have two options:
 
-      1. **Install GNU Stow** \
-         Highly recommended, it is simpler and since it uses symbolic links no duplicate files are created.
-         ```bash
-          sudo pacman -S --needed stow
-         ```
-            2.  **Stow Dotfiles** \
-                Navigate into your cloned repository and use stow to create symbolic links. \
-                For stow to work correctly, each dotfile or configuration folder you want to link should be in its own subdirectory within `~/bspwmdots/`
-                ```bash
-                cd ~/bspwmdots/
-                
-                # Stow all
-                stow *
-                ```
-      2. **Manual Copy** \
-          Directly copy the configuration files to their respective locations.
+    **Option A: Using GNU Stow (Recommended where applicable)** \
+    Highly recommended, it is simpler and since it uses symbolic links no duplicate files are created.
+
+    1.  **Install GNU Stow**
+        ```bash
+        sudo pacman -S --needed stow
+        ```
+    2.  **Stow Dotfiles**
+        Navigate into your cloned repository and use stow to create symbolic links.
+        For stow to work correctly, each dotfile or configuration folder you want to link should be in its own subdirectory within `~/bspwmdots/`
+        ```bash
+        cd ~/bspwmdots/
+        
+        # Stow .config directory
+        stow .config/
+
+        # Link individual dotfiles from the cloned repository to your home directory
+        ln -s ~/bspwmdots/.zshrc ~/.zshrc
+        ln -s ~/bspwmdots/.xinitrc ~/.xinitrc
+        ```
+
+    **Option B: Manual Copy** \
+    Directly copy the configuration files to their respective locations.
 
 6.  **Install Fonts**
     For proper rendering of icons in Polybar, your shell prompt, and overall visual consistency, specific fonts are required.
@@ -89,11 +96,11 @@ It is assumed that the user has a clean Arch Linux installation. Make sure you h
 7.  **Enable / Start Services & Autostart:**
     Ensure bspwm and other services start correctly when you log in to X.
 
-    * **Make `bspwmrc` executable:**
+    * **Make `bspwmrc` executable**
         ```bash
         chmod +x ~/.config/bspwm/bspwmrc
         ```
-    * **Make `xinitrc` executable:**
+    * **Make `xinitrc` executable**
         ```bash
         chmod +x ~/.xinitrc
         ``
@@ -107,6 +114,6 @@ It is assumed that the user has a clean Arch Linux installation. Make sure you h
 ## 💝 Thanks To
 Thanks to these programmers for their work and making it open source so that people like me can use it, their work inspired me to develop my configurations.
 
-[hicfool](https://github.com/hicfool "Polybar inspiration") &rarr; Polybar inspiration 
+[hicfool](https://github.com/hicfool) &rarr; Polybar inspiration
 
 <img src="https://user-images.githubusercontent.com/123886904/218294072-d474a330-7464-430a-b369-91f79373dbca.svg" width="100%" title="Footer">
