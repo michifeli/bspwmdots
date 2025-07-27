@@ -6,4 +6,4 @@ After configuring a desktop environment with Hyprland on Wayland, I was left wan
 
 My configuration aims to be both functional and simple, tailored specifically for my workflow as a Telematics Engineering student and my daily needs.
 
-I hope this repository serve as a guide and inspiration for your `rice. If you have any questions or suggestions, I would greatly appreciate you sharing them, either by opening an issue here or contacting me through the methods listed on my GitHub profile.
+I hope this repository serve as a guide and inspiration for your 'rice'. If you have any questions or suggestions, I would greatly appreciate you sharing them, either by opening an issue here or contacting me through the methods listed on my GitHub profile.
