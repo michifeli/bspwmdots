@@ -8,4 +8,20 @@ My configuration aims to be both functional and simple, tailored specifically fo
 
 I hope this repository serve as a guide and inspiration for your 'rice'. If you have any questions or suggestions, I would greatly appreciate you sharing them, either by opening an issue here or contacting me through the methods listed on my GitHub profile.
 
-> ⚠️ Warning: Do not apply my settings to your system unless you fully understand what you are doing. Use at your own risk.
+#
+> [!WARNING]
+> Do not apply my settings to your system unless you fully understand what you are doing. Use at your own risk.
+
+## Essentials
+
+## Repository structure
+
+## Installation
+
+## Take a look
+
+
+## 💝 Thanks To
+Thanks to these programmers for their work and making it open source so that people like me can use it, their work inspired me to develop my configurations.
+
+[hicfool](https://github.com/hicfool "Polybar inspiration") &rarr; Polybar inspiration 
