@@ -25,3 +25,5 @@ I hope this repository serve as a guide and inspiration for your 'rice'. If you 
 Thanks to these programmers for their work and making it open source so that people like me can use it, their work inspired me to develop my configurations.
 
 [hicfool](https://github.com/hicfool "Polybar inspiration") &rarr; Polybar inspiration 
+
+<img src="https://user-images.githubusercontent.com/123886904/218294072-d474a330-7464-430a-b369-91f79373dbca.svg" width="100%" title="Footer">
