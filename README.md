@@ -35,6 +35,93 @@ I hope this repository serve as a guide and inspiration for your 'rice'. If you 
 ```
 
 ## Installation
+It is assumed that the user has a clean Arch Linux installation. Make sure you have git installed.
+
+1. **Install GNU Stow** \
+   Highly recommended, it is simpler and since it uses symbolic links no duplicate files are created.
+   ```bash
+    sudo pacman -S --needed stow
+   ```
+2.  **Install an AUR Helper (I use paru)** \
+    Some dependencies might be in the Arch User Repository (AUR). You can install [paru](https://github.com/Morganamilo/paru?tab=readme-ov-file#installation) or [yay](https://github.com/Jguer/yay#installation), which are among the most popular.
+
+3.  **Install Core Dependencies** \
+    These are the essential packages from the official Arch repositories required for the desktop environment to function.
+    ```bash
+    sudo pacman -S --needed ...
+    ```
+    ```bash
+    paru -S --needed ...
+    ```
+
+6.  **Clone the Repository** \
+    Start by cloning these dotfiles to your home directory.
+    ```bash
+    git clone https://github.com/michifeli/bspwmdots.git
+    ```
+
+4.  **Backup Existing Dotfiles (Highly Recommended!)** \
+     Before stowing, make a backup of any existing dotfiles to prevent data loss.
+    ```bash
+    # Example backups (adjust as needed)
+    mv ~/.config/bspwm ~/.config/bspwm.bak
+    mv ~/.zshrc ~/.zshrc.bak
+    # ... and so on for any conflicting dotfiles
+    ```
+
+5.  **Stow Dotfiles** \
+    Navigate into your cloned repository and use stow to create symbolic links. \
+    For stow to work correctly, each dotfile or configuration folder you want to link should be in its own subdirectory within ~/bspwmdots/
+    ```bash
+    cd ~/bspwmdots/
+    
+    # Stow each config directory
+    stow bspwm
+    stow btop
+    stow dunst
+    stow kitty
+    stow picom
+    stow polybar
+    stow sxhkd
+    ...
+
+    # Stow root dotfiles (assuming they are in their own 'stowable' folders)
+    stow zsh # This will link .zshrc (if ~/./zsh/.zshrc exists)
+    stow xinitrc # This will link .xinitrc (if ~/./xinitrc/.xinitrc exists)
+    ```
+
+4.  **Install Fonts (Crucial for Aesthetics):**
+    For proper rendering of icons in Polybar, your shell prompt, and overall visual consistency, specific fonts are required.
+    ```bash
+    # Example: Install Nerd Fonts (replace with your actual font dependencies)
+    paru -S --needed ttf-nerd-fonts-symbols-mono # Or yay -S ...
+    # ... (rest of your font installation instructions) ...
+
+    fc-cache -fv # Refresh font cache after installation
+    ```
+    *(Be very specific about the fonts you use! List them all.)*
+
+5.  **Enable / Start Services & Autostart:**
+    Ensure bspwm and other services start correctly when you log in to X.
+
+    * **Make `bspwmrc` executable:**
+        ```bash
+        chmod +x ~/.config/bspwm/bspwmrc
+        ```
+    * **Make `xinitrc` executable:**
+        ```bash
+        chmod +x ~/.xinitrc
+        ```
+    * **Ensure Polybar launch scripts are executable:**
+        If you have custom scripts for Polybar (e.g., in `~/.config/polybar/scripts/` or `~/.local/bin/`), make sure they are executable.
+        ```bash
+        chmod +x ~/.config/polybar/launch.sh # Or any other script you have
+        ```
+    * **Start your X session:**
+        From your TTY (terminal), simply type `startx` to launch your graphical environment. This command reads your `~/.xinitrc` to start bspwm, picom, dunst, etc.
+
+6.  **Reboot / Log Out & Log In:**
+    After setting up, log out of your current session (if any) and log back in, or simply reboot your system, to ensure all changes take effect.
 
 ## Take a look
 
