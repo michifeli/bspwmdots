@@ -42,35 +42,40 @@ This guide assumes a clean Arch Linux installation with git already present. Fam
 
 2.  **Install Core Dependencies** \
     These are the essential packages from the official Arch repositories required for the desktop environment to function.
+
     ```bash
     sudo pacman -S --needed ...
     ```
+
     ```bash
     paru -S --needed ...
     ```
 
-3.  **Clone the Repository** \
+4.  **Clone the Repository** \
     Start by cloning these dotfiles to your home directory.
+
     ```bash
     git clone https://github.com/michifeli/bspwmdots.git
     ```
 
-4.  **Backup Existing Dotfiles (Highly Recommended!)** \
+5.  **Backup Existing Dotfiles (Highly Recommended!)** \
      Before stowing, make a backup of any existing dotfiles to prevent data loss.
     
-5.  **Incorporate dotfiles** \
+6.  **Incorporate dotfiles** \
     To apply the configuration files you have two options:
 
     **Option A: Using GNU Stow (Recommended where applicable)** \
     Highly recommended, it is simpler and since it uses symbolic links no duplicate files are created.
 
     1.  **Install GNU Stow**
+       
         ```bash
         sudo pacman -S --needed stow
         ```
     2.  **Stow Dotfiles**
         Navigate into your cloned repository and use stow to create symbolic links.
         For stow to work correctly, each dotfile or configuration folder you want to link should be in its own subdirectory within `~/bspwmdots/`
+        
         ```bash
         cd ~/bspwmdots/
         
@@ -85,27 +90,30 @@ This guide assumes a clean Arch Linux installation with git already present. Fam
     **Option B: Manual Copy** \
     Directly copy the configuration files to their respective locations.
 
-6.  **Install Fonts**
+7.  **Install Fonts** \
     For proper rendering of icons in Polybar, your shell prompt, and overall visual consistency, specific fonts are required.
+    
     ```bash
     paru -S --needed ...
     
     fc-cache -fv # Refresh font cache after installation
     ```
 
-7.  **Enable / Start Services & Autostart:**
+8.  **Enable / Start Services & Autostart** \
     Ensure bspwm and other services start correctly when you log in to X.
 
     * **Make `bspwmrc` executable**
+      
         ```bash
         chmod +x ~/.config/bspwm/bspwmrc
         ```
     * **Make `xinitrc` executable**
+      
         ```bash
         chmod +x ~/.xinitrc
-        ``
+        ```
 
-8.  **Reboot**
+9.  **Reboot** \
     After setting up, simply reboot your system, to ensure all changes take effect.
 
 ## Take a look
