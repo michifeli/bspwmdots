@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bspc monitor -d www dev term misc media
+bspc monitor -d www term dev misc media
 
 bspc config border_width         2
 bspc config window_gap           8
@@ -13,7 +13,7 @@ bspc config history_aware_global_focus true
 
 # Autostart
 # ------------------------ #
-killall -9 feh polybar sxhkd dunst
+killall -9 picom feh polybar sxhkd dunst
 
 feh --bg-fill /home/samsepi0l/animerain.png
 sxhkd &
