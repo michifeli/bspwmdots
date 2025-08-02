@@ -11,6 +11,10 @@ I hope this repository serves as a guide and inspiration for your 'rice'. If you
 #
 > [!WARNING]
 > Do not apply my settings to your system unless you fully understand what you are doing. Use at your own risk.
+#
+### Things to do
+- Add GTK Themes.
+- New color scheme
 
 ## Essentials
 / **Distro** &rarr; [Arch Linux](https://archlinux.org "Keep it simple, stupid") 🐧 \
