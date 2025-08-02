@@ -118,6 +118,8 @@ This guide assumes a clean Arch Linux installation with git already present. Fam
 
 ## Take a look
 
+<img align="center" src="/assets/wall2.png">
+<img align="center" src="/assets/wall1.png">
 
 ## 💝 Thanks To
 Thanks to these programmers for their work and making it open source so that people like me can use it, their work inspired me to develop my configurations.
